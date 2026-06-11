@@ -15,6 +15,10 @@ h2 { color: #00ff88; border-bottom: 1px solid #333; padding-bottom: 10px; }
 .card h3 { color: #fff; margin-top: 0; }
 .tag { display: inline-block; background: #00ff88; color: #000; padding: 3px 10px; border-radius: 20px; font-size: 0.8em; margin: 3px; font-weight: bold; }
 .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+.screenshot { width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #333; }
+.screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+.screenshot-item { text-align: center; }
+.screenshot-item p { color: #aaa; font-size: 0.85em; margin: 5px 0; }
 footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #222; margin-top: 40px; }
 </style>
 </head>
@@ -35,6 +39,26 @@ footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #
 <h3>Home SOC Lab — ELK Stack SIEM on Google Cloud Platform</h3>
 <p>Deployed a fully functional SIEM environment on a Google Cloud Platform VM using Docker containers. Configured Filebeat to ingest Linux authentication logs in real time into Elasticsearch. Used Kibana to detect and investigate a live SSH brute force attack, tracing the attacker to Jakarta, Indonesia via threat intelligence lookup.</p>
 <p><strong>Key findings:</strong> 706+ brute force attempts detected, attacker IP 43.133.148.170 identified as Tencent-hosted infrastructure in Indonesia.</p>
+
+<div class="screenshot-grid">
+<div class="screenshot-item">
+<img src="IMG_0245.jpeg" class="screenshot" alt="Filebeat Running">
+<p>Filebeat active and shipping logs</p>
+</div>
+<div class="screenshot-item">
+<img src="IMG_0247.jpeg" class="screenshot" alt="Kibana Dashboard">
+<p>Kibana SOC monitoring dashboard</p>
+</div>
+<div class="screenshot-item">
+<img src="IMG_0248.jpeg" class="screenshot" alt="Brute Force Detection">
+<p>706 SSH brute force attempts detected</p>
+</div>
+<div class="screenshot-item">
+<img src="IMG_0249.jpeg" class="screenshot" alt="Threat Intelligence">
+<p>Attacker traced to Jakarta, Indonesia</p>
+</div>
+</div>
+
 <span class="tag">ELK Stack</span>
 <span class="tag">Filebeat</span>
 <span class="tag">Google Cloud</span>
@@ -73,7 +97,7 @@ footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #
 </div>
 
 <footer>
-<p>John Afunwi — Cybersecurity Portfolio — johnafunwi.github.io</p>
+<p>John Afunwi — Cybersecurity Portfolio — jafunwi.github.io</p>
 </footer>
 </body>
 </html>
