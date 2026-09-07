@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Karla:wght@400;500;700&display=swap');
+
+:root {
+  --ink: #1b2a2e;
+  --tan: #e4dcc8;
+  --ochre: #b67f2e;
+  --rust: #8c2f1b;
+  --slate: #435363;
+  --text-dark: #21201c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--tan);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--rust);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--ochre);
+  text-decoration: underline;
+}
+
+.site-header {
+  background-color: var(--ink);
+  color: var(--tan);
+  padding: 1.5rem 2rem 0;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+.site-header h1 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.25rem;
+}
+
+.primary-nav ul,
+.secondary-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 1.25rem;
+}
+
+.primary-nav a,
+.secondary-nav a {
+  color: var(--tan);
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.primary-nav a:hover,
+.secondary-nav a:hover {
+  color: var(--ochre);
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+main h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: 1.75rem;
+  color: var(--rust);
+  border-bottom: 3px solid var(--ochre);
+  display: inline-block;
+  padding-bottom: 0.15rem;
+  margin-bottom: 1.25rem;
+}
+
+main h3 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--slate);
+  margin-bottom: 0.5rem;
+}
+
+.landing-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+.course-link {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--rust);
+}
+
+figure {
+  margin: 0 0 1.5rem;
+  max-width: 260px;
+}
+
+figure img {
+  width: 100%;
+  display: block;
+  border: 3px solid var(--slate);
+}
+
+figcaption {
+  font-size: 0.85rem;
+  color: var(--slate);
+  margin-top: 0.4rem;
+}
+
+.contract-text p {
+  margin-bottom: 1rem;
+}
+
+.signature-line {
+  margin-top: 2rem;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-size: 1.1rem;
+}
+
+.site-footer {
+  background-color: var(--slate);
+  color: var(--tan);
+  padding: 2rem 1.5rem;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.footer-nav a {
+  color: var(--tan);
+  font-weight: 500;
+}
+
+.footer-nav a:hover {
+  color: var(--ochre);
+}
+
+.credit {
+  font-weight: 700;
+  margin: 0 0 1rem;
+}
+
+.validation-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.validation-links a {
+  border: 1px solid var(--tan);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .site-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .primary-nav ul,
+  .secondary-nav ul,
+  .footer-nav ul {
+    gap: 0.75rem 1rem;
+  }
+
+  main,
+  .landing-main {
+    padding: 1.75rem 1.25rem 2.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  main,
+  .landing-main {
+    padding-top: 3.5rem;
+  }
+}
