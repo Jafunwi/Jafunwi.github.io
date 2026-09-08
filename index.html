@@ -98,6 +98,15 @@ footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #
 
 <footer>
 <p>John Afunwi — Cybersecurity Portfolio — jafunwi.github.io</p>
+<p>
+<a id="validation_link_html" href="https://validator.w3.org/check?uri=referer" style="color:#00ff88; margin-right:15px;">Validate HTML</a>
+<a id="validation_link_css" href="https://jigsaw.w3.org/css-validator/check/referer" style="color:#00ff88;">Validate CSS</a>
+</p>
 </footer>
+
+<script>
+document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+</script>
 </body>
 </html>
