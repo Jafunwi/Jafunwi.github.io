@@ -5,25 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ITIS3135 | John Afunwi's | Sharp Hawk | Introduction</title>
   <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="site-header">
-    <h1>ITIS3135 | John Afunwi's | Sharp Hawk</h1>
-    <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="introduction.html">Introduction</a></li>
-        <li><a href="contract.html">Contract</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div data-include="components/header.html"></div>
 
   <main>
     <h2>Introduction</h2>
     <h3>John Afunwi</h3>
 
     <figure>
-      <img src=" images/IMG_1920.JPG" alt="Professional photo of John Afunwi" width="260" height="260">
+      <img src="images/IMG_1920.JPG" alt="Professional photo of John Afunwi" width="260" height="260">
       <figcaption>John Afunwi</figcaption>
     </figure>
 
@@ -46,30 +38,9 @@
     </p>
   </main>
 
-  <footer class="site-footer">
-    <nav class="footer-nav" aria-label="Footer">
-      <ul>
-        <li><a href="https://webpages.charlotte.edu/jafunwi/">Webspace</a></li>
-        <li><a href="https://github.com/Jafunwi">GitHub.com</a></li>
-        <li><a href="https://jafunwi.github.io/">GitHub.io</a></li>
-        <li><a href="https://jafunwi.github.io/itis3135/">Course.io</a></li>
-        <li><a href="https://www.freecodecamp.org/Jafunwi">FreeCodeCamp</a></li>
-        <li><a href="https://www.codecademy.com/profiles/jafunwi">Codecademy</a></li>
-        <li><a href="https://www.linkedin.com/in/john-afunwi-372287334/">LinkedIn</a></li>
-      </ul>
-    </nav>
-    <p class="credit">
-     Designed by <a href="afunwidesigns.com/">Afunwi Designs</a>
-    </p>
-    <div class="validation-links">
-      <a id="validation_link_html" href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
-      <a id="validation_link_css" href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
-    </div>
-  </footer>
+  <div data-include="components/footer.html"></div>
 
-  <script>
-    document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
-    document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-  </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>
