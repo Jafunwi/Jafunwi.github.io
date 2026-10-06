@@ -4,72 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ITIS3135 | John Afunwi's | Sharp Hawk | Introduction</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header class="site-header">
-    <h1>ITIS3135 | John Afunwi's | Sharp Hawk</h1>
-    <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="introduction.html">Introduction</a></li>
-        <li><a href="contract.html">Contract</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div data-include="components/header.html"></div>
 
   <main>
     <h2>Introduction</h2>
     <h3>John Afunwi</h3>
+    <h6 class="display-name">John "Jay" Afunwi <span class="divider">|</span> Jovial Albatross</h6>
 
     <figure>
-      <img src=" images/IMG_1920.JPG" alt="Professional photo of John Afunwi" width="260" height="260">
+      <img src="images/john-afunwi-profile.jpg" alt="Professional photo of John Afunwi" width="260" height="260">
       <figcaption>John Afunwi</figcaption>
     </figure>
 
-    <p>
-      I'm a senior computer science student with a concentration in cyber
-      security. My long-term goal is to finish my bachelor's degree with all
-      the skills I'll need to step into the job world ready to contribute
-      from day one.
-    </p>
+    <p><strong>Personal Background:</strong> I like building small hands-on technical projects outside of class, from home lab setups to prototype apps, as a way of learning by doing.</p>
+    <p><strong>Professional Background:</strong> I'm early in my career, currently building a portfolio through coursework, certifications, and personal projects.</p>
+    <p><strong>Academic Background:</strong> I'm a senior computer science student with a concentration in cyber security, working toward finishing my bachelor's degree with the skills to contribute from day one.</p>
+    <p><strong>Primary Work Computer:</strong> I do most of my coursework and development on a Windows laptop running VS Code, GitHub Desktop, and FileZilla.</p>
 
     <h3>Current Courses</h3>
-    <ul>
-      <li>ITIS 3135 &mdash; Front-End Web Application Development</li>
-    </ul>
+    <ol>
+      <li>
+        ITIS 3135 &mdash; Front-End Web Application Development
+        <ol>
+          <li>HTML structure and semantics</li>
+          <li>CSS styling and layout</li>
+          <li>Forms, media, and accessibility</li>
+        </ol>
+      </li>
+    </ol>
 
-    <p>
-      Outside of coursework, I like building small hands-on technical
-      projects &mdash; from home lab setups to prototype apps &mdash; as a
-      way of learning by doing.
-    </p>
+    <blockquote>
+      <p>"The best way to learn is by building something real."</p>
+      <p>~ Anonymous</p>
+    </blockquote>
   </main>
 
-  <footer class="site-footer">
-    <nav class="footer-nav" aria-label="Footer">
-      <ul>
-        <li><a href="https://webpages.charlotte.edu/jafunwi/">Webspace</a></li>
-        <li><a href="https://github.com/Jafunwi">GitHub.com</a></li>
-        <li><a href="https://jafunwi.github.io/">GitHub.io</a></li>
-        <li><a href="https://jafunwi.github.io/itis3135/">Course.io</a></li>
-        <li><a href="https://www.freecodecamp.org/Jafunwi">FreeCodeCamp</a></li>
-        <li><a href="https://www.codecademy.com/profiles/jafunwi">Codecademy</a></li>
-        <li><a href="https://www.linkedin.com/in/john-afunwi-372287334/">LinkedIn</a></li>
-      </ul>
-    </nav>
-    <p class="credit">
-      Designed by <a href="https://jafunwi.github.io/">Afunwifirm</a> &#169;2026
-    </p>
-    <div class="validation-links">
-      <a id="validation_link_html" href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
-      <a id="validation_link_css" href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
-    </div>
-  </footer>
+  <div data-include="components/footer.html"></div>
 
-  <script>
-    document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
-    document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-  </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>
