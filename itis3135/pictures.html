@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Afunwi's Jovial Albatross | ITIS3135 | Pictures</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>John Afunwi's Jovial Albatross | ITIS3135</h1>
+    <p><em>"Building secure things, one page at a time."</em></p>
+  </header>
+
+  <nav aria-label="Main menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="introduction.html">Introduction</a></li>
+      <li><a href="contract.html">Contract</a></li>
+      <li><a href="survey.html">Survey</a></li>
+      <li><a href="playing-cards.html">Playing Cards</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="instructions.html">Instructions</a></li>
+      <li><a href="product-landing.html">Product Landing</a></li>
+      <li><a href="website_evaluations.html">Website Evaluations</a></li>
+      <li><a href="pictures.html" aria-current="page">Pictures</a></li>
+      <li>
+        <a href="#" aria-haspopup="true">More</a>
+        <ul>
+          <li><a href="afunwidesigns.com/index.html">Afunwi Designs</a></li>
+          <li><a href="original_index.html">Original Index</a></li>
+          <li><a href="https://webpages.charlotte.edu/jafunwi/itis3135/stuff/MY%20Bad%20Page-%F0%9F%98%A7%F0%9F%98%A7.htm">CRAPpy page</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Everything Pictures</h2>
+    <p>This page explores how images work on the web. Using two photos, one large professional photo from Pexels and one I took myself, I compare file formats (JPG, GIF, PNG), color modes (full color, greyscale, black and white), file sizes, and what happens when an image is resized properly in an editor versus stretched or enlarged with CSS.</p>
+
+    <section>
+      <h3>Demonstrating Image Manipulation with a Chicago Skyline Photo from Pexels</h3>
+      <p>I picked this photo because the buildings give lots of fine detail, which makes quality loss easy to see. It was taken by Pawel (aparatem_go on Pexels), a photographer based in Lublin, Poland, whose profile describes his work as "Trying to Make Simple Things Unusually..." and whose photos have drawn about 3.3 million views. The photo is 5075 x 3383 pixels, a 3.07 MB JPG, and shows a dense group of downtown Chicago skyscrapers beside a blue-green lake. Source: <a href="https://www.pexels.com/photo/15629500/" target="_blank" rel="noopener">the photo's Pexels page</a>.</p>
+
+      <figure>
+        <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-600x400.jpg" alt="Aerial view of downtown Chicago skyscrapers next to a lake" width="600" height="400">
+        <figcaption>The Chicago skyline photo, reduced to 600 x 400 pixels for this page.</figcaption>
+      </figure>
+
+      <article>
+        <h4>Original Image</h4>
+        <p>Click to open the image in its original JPG format, or as a GIF, greyscale, or black and white version (each opens in a new tab):</p>
+        <ul>
+          <li><a href="images/chicago-skyline-15629500@pawel-aparatem-go_pexels.jpg" target="_blank" rel="noopener">Original (JPG, 5075 x 3383, 3.07 MB)</a></li>
+          <li><a href="images/chicago-skyline-15629500@pawel-aparatem-go_pexels.gif" target="_blank" rel="noopener">Original as a GIF (7.71 MB)</a></li>
+          <li><a href="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-greyscale.jpg" target="_blank" rel="noopener">Greyscale (JPG, 3.77 MB)</a></li>
+          <li><a href="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-bw.png" target="_blank" rel="noopener">Black and white (PNG, 1.09 MB)</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <h4>Downsizing Images with CSS</h4>
+        <figure>
+          <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels.jpg" alt="Chicago skyline, original file shrunk by CSS" style="width: 600px; max-width: 100%; height: auto;">
+          <figcaption>The full 3.07 MB original, shrunk to 600 pixels wide with CSS. It looks fine, but the browser still downloads every byte of the large file.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Proper Reduction of Image with Editor</h4>
+        <figure>
+          <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-600x400.jpg" alt="Chicago skyline resized in an editor to 600 by 400" width="600" height="400" style="max-width: 100%; height: auto;">
+          <figcaption>The same photo resized to 600 x 400 in an editor. It looks just as sharp, and the file is only about 106 KB.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Improper image proportions with CSS</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start;">
+          <figure>
+            <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-600x400.jpg" alt="Chicago skyline squashed in width" style="width: 402px; height: 400px;">
+            <figcaption>Height kept at 400, width cut by 33% (402 px): the buildings look squeezed.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-600x400.jpg" alt="Chicago skyline squashed in width twice" style="width: 269px; height: 400px;">
+            <figcaption>Width cut by another 33% (269 px): even thinner.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-600x400.jpg" alt="Chicago skyline squashed in height" style="width: 600px; height: 268px;">
+            <figcaption>Width kept at 600, height cut by 33% (268 px): the buildings look flattened.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-600x400.jpg" alt="Chicago skyline squashed in height twice" style="width: 600px; height: 180px;">
+            <figcaption>Height cut by another 33% (180 px): flatter still.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article>
+        <h4>Improper Enlarging with CSS</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start;">
+          <figure>
+            <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-600x400.jpg" alt="Chicago skyline, 600 by 400 file shown at 600 pixels wide" style="width: 600px; max-width: 100%; height: auto;">
+            <figcaption>The 600 x 400 file displayed at 600 pixels wide: sharp.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/chicago-skyline-15629500@pawel-aparatem-go_pexels-150x100.jpg" alt="Chicago skyline, 150 by 100 file stretched to 600 pixels wide" style="width: 600px; max-width: 100%; height: auto;">
+            <figcaption>The 150 x 100 file (25% of the size) stretched to 600 pixels wide with the same CSS: blurry and pixelated.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>Demonstrating Image Proportions with a Plate Next to My Head</h3>
+      <p>I took this photo myself with my phone: a perfectly round plate held next to my face. A circle is a good test because any stretching shows right away. The photo is 2316 x 3088 pixels, a 1.2 MB JPG, and it is portrait (taller than wide), which makes squashing mistakes easy to spot.</p>
+
+      <figure>
+        <img src="images/plate-next-to-head@john-afunwi-600x800.jpg" alt="John Afunwi holding a round pink plate next to his head" width="600" height="800" style="max-width: 100%; height: auto;">
+        <figcaption>Me holding a round plate beside my face, reduced to 600 x 800 pixels.</figcaption>
+      </figure>
+
+      <article>
+        <h4>Original Image</h4>
+        <p>Click to open the image in its original JPG format, or as a GIF, greyscale, or black and white version (each opens in a new tab):</p>
+        <ul>
+          <li><a href="images/plate-next-to-head@john-afunwi.jpg" target="_blank" rel="noopener">Original (JPG, 2316 x 3088, 1.2 MB)</a></li>
+          <li><a href="images/plate-next-to-head@john-afunwi.gif" target="_blank" rel="noopener">Original as a GIF (2.80 MB)</a></li>
+          <li><a href="images/plate-next-to-head@john-afunwi-greyscale.jpg" target="_blank" rel="noopener">Greyscale (JPG, 0.90 MB)</a></li>
+          <li><a href="images/plate-next-to-head@john-afunwi-bw.png" target="_blank" rel="noopener">Black and white (PNG, 0.15 MB)</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <h4>Downsizing Images with CSS</h4>
+        <figure>
+          <img src="images/plate-next-to-head@john-afunwi.jpg" alt="Plate photo, original file shrunk by CSS" style="width: 300px; max-width: 100%; height: auto;">
+          <figcaption>The full 1.2 MB original, shrunk to 300 pixels wide with CSS. It keeps its proportions, but the browser still downloads the whole file.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Proper Reduction of Image with Editor</h4>
+        <figure>
+          <img src="images/plate-next-to-head@john-afunwi-600x800.jpg" alt="Plate photo resized in an editor to 600 by 800" width="600" height="800" style="max-width: 100%; height: auto;">
+          <figcaption>The same photo resized to 600 x 800 in an editor. The plate is still a true circle, and the file is only about 83 KB.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Improper image proportions with CSS</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start;">
+          <figure>
+            <img src="images/plate-next-to-head@john-afunwi-600x800.jpg" alt="Plate photo squashed in width" style="width: 402px; height: 800px;">
+            <figcaption>Height kept at 800, width cut by 33% (402 px): the plate turns into a tall oval.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/plate-next-to-head@john-afunwi-600x800.jpg" alt="Plate photo squashed in width twice" style="width: 269px; height: 800px;">
+            <figcaption>Width cut by another 33% (269 px): an even narrower oval.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/plate-next-to-head@john-afunwi-600x800.jpg" alt="Plate photo squashed in height" style="width: 600px; height: 536px;">
+            <figcaption>Width kept at 600, height cut by 33% (536 px): the plate turns into a wide oval.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/plate-next-to-head@john-afunwi-600x800.jpg" alt="Plate photo squashed in height twice" style="width: 600px; height: 359px;">
+            <figcaption>Height cut by another 33% (359 px): flattened even more.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article>
+        <h4>Improper Enlarging with CSS</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start;">
+          <figure>
+            <img src="images/plate-next-to-head@john-afunwi-600x800.jpg" alt="Plate photo, 600 by 800 file shown at 300 pixels wide" style="width: 300px; max-width: 100%; height: auto;">
+            <figcaption>The 600 x 800 file displayed at 300 pixels wide: sharp.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/plate-next-to-head@john-afunwi-150x200.jpg" alt="Plate photo, 150 by 200 file stretched to 300 pixels wide" style="width: 300px; max-width: 100%; height: auto;">
+            <figcaption>The 150 x 200 file (25% of the size) stretched to 300 pixels wide with the same CSS: blurry and pixelated.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <small>&copy; 2026 John Afunwi | <a href="afunwidesigns.com/index.html">Afunwifirm</a></small>
+    <ul>
+      <li><a href="https://webpages.charlotte.edu/jafunwi/">CLT Web</a></li>
+      <li><a href="https://jafunwi.github.io/">GitHub.io</a></li>
+      <li><a href="https://github.com/Jafunwi">GitHub</a></li>
+      <li><a href="https://www.freecodecamp.org/Jafunwi">freeCodeCamp</a></li>
+      <li><a href="https://www.codecademy.com/profiles/jafunwi">Codecademy</a></li>
+      <li><a href="https://www.linkedin.com/in/john-afunwi-372287334/">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
