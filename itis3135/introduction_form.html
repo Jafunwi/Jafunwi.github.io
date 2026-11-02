@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Afunwi's Jovial Albatross | ITIS3135 | Introduction Form</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>John Afunwi's Jovial Albatross | ITIS3135</h1>
+    <p><em>"Building secure things, one page at a time."</em></p>
+  </header>
+
+  <nav aria-label="Main menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="introduction.html">Introduction</a></li>
+      <li><a href="contract.html">Contract</a></li>
+      <li><a href="survey.html">Survey</a></li>
+      <li><a href="playing-cards.html">Playing Cards</a></li>
+      <li><a href="inventory.html">Inventory</a></li>
+      <li><a href="instructions.html">Instructions</a></li>
+      <li><a href="product-landing.html">Product Landing</a></li>
+      <li><a href="website_evaluations.html">Website Evaluations</a></li>
+      <li><a href="pictures.html">Pictures</a></li>
+      <li><a href="introduction_form.html" aria-current="page">Introduction Form</a></li>
+      <li>
+        <a href="#" aria-haspopup="true">More</a>
+        <ul>
+          <li><a href="afunwidesigns.com/index.html">Afunwi Designs</a></li>
+          <li><a href="original_index.html">Original Index</a></li>
+          <li><a href="https://webpages.charlotte.edu/jafunwi/itis3135/stuff/MY%20Bad%20Page-%F0%9F%98%A7%F0%9F%98%A7.htm">CRAPpy page</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <h2>Introduction Form</h2>
+    <h3>Please submit the form below.</h3>
+
+    <form id="form">
+      <fieldset>
+        <legend>Name</legend>
+        <p><label>First Name *<br>
+          <input type="text" id="firstName" name="firstName" value="John" placeholder="First name" required></label></p>
+        <p><label>Middle Name or Initial (optional)<br>
+          <input type="text" id="middleName" name="middleName" value="" placeholder="Middle name or initial"></label></p>
+        <p><label>Nickname / Preferred Name (optional)<br>
+          <input type="text" id="nickname" name="nickname" value="J" placeholder="Nickname or preferred name"></label></p>
+        <p><label>Last Name *<br>
+          <input type="text" id="lastName" name="lastName" value="Afunwi" placeholder="Last name" required></label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Acknowledgment</legend>
+        <p><label>Acknowledgment Statement *<br>
+          <input type="text" id="acknowledgment" name="acknowledgment" size="70" value="I understand that this is a public document, and I won't put anything here I wouldn't want anyone to see." placeholder="Acknowledgment statement" required></label></p>
+        <p><label>Acknowledgment Date *<br>
+          <input type="text" id="acknowledgmentDate" name="acknowledgmentDate" value="11/2/26" placeholder="MM/DD/YY" required></label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Mascot</legend>
+        <p><label>Mascot Adjective *<br>
+          <input type="text" id="adjectives" name="adjectives" value="Jovial" placeholder="Adjective" required></label></p>
+        <p><label>Mascot Animal *<br>
+          <input type="text" id="animal" name="animal" value="Albatross" placeholder="Animal" required></label></p>
+        <p><label>Divider (for example ~, |, or ♥) *<br>
+          <input type="text" id="prettyNameDivider" name="prettyNameDivider" value="|" placeholder="Divider" required></label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Picture</legend>
+        <p><label>Upload a picture (leave empty to use the default image)<br>
+          <input type="file" id="img" name="img" accept="image/*"></label></p>
+        <p>Default image: <code>images/john-afunwi-profile.jpg</code></p>
+        <p><label>Picture Alt Text *<br>
+          <input type="text" id="pictureAlt" name="pictureAlt" size="50" value="Portrait of John Afunwi" placeholder="Describe the picture" required></label></p>
+        <p><label>Picture Caption (optional)<br>
+          <input type="text" id="caption" name="caption" size="50" value="" placeholder="Picture caption"></label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>About Me</legend>
+        <p><label>Personal Statement (optional)<br>
+          <textarea id="statement" name="statement" rows="3" cols="70" placeholder="Write a short personal statement"></textarea></label></p>
+        <p><label>Personal Background *<br>
+          <textarea id="personalBackground" name="personalBackground" rows="3" cols="70" placeholder="Personal background" required>I learn best by doing, so I spend my free time on hands-on projects, from tinkering with hardware to baking and following sports.</textarea></label></p>
+        <p><label>Professional Background *<br>
+          <textarea id="professionalBackground" name="professionalBackground" rows="3" cols="70" placeholder="Professional background" required>I'm building my experience through IT certifications and portfolio projects, including a SOC analyst home lab and a mobile password tracker app.</textarea></label></p>
+        <p><label>Academic Background *<br>
+          <textarea id="academicBackground" name="academicBackground" rows="3" cols="70" placeholder="Academic background" required>Computer science student at UNC Charlotte, working toward IT certifications alongside my coursework.</textarea></label></p>
+        <p><label>Primary Work Computer *<br>
+          <textarea id="primaryWorkComputer" name="primaryWorkComputer" rows="3" cols="70" placeholder="Primary work computer" required>A Windows laptop, where I use VS Code, PowerShell and MSYS2.</textarea></label></p>
+        <p><label>Primary Work Location *<br>
+          <textarea id="primaryWorkLocation" name="primaryWorkLocation" rows="2" cols="70" placeholder="Primary work location" required>my dorm room or the library.</textarea></label></p>
+        <p><label>Alternate Computer *<br>
+          <textarea id="alternateComputerLocation" name="alternateComputerLocation" rows="2" cols="70" placeholder="Alternate computer or location" required>Campus computer.</textarea></label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Courses I'm Taking</legend>
+        <div id="courses">
+          <fieldset class="course">
+            <legend>Course</legend>
+            <p><label>Department *<br>
+              <input type="text" class="department" value="ITIS" placeholder="Department (for example ITIS)" required></label></p>
+            <p><label>Number *<br>
+              <input type="text" class="courseNumber" value="3135" placeholder="Course number (for example 3135)" required></label></p>
+            <p><label>Name *<br>
+              <input type="text" class="courseTitle" size="50" value="Front-End Web Application Development" placeholder="Course name" required></label></p>
+            <p><label>Reason *<br>
+              <textarea class="reasonForTaking" rows="2" cols="70" placeholder="Why are you taking this course?" required>I want to build a strong web portfolio and learn clean, accessible HTML and CSS.</textarea></label></p>
+          </fieldset>
+          <fieldset class="course">
+            <legend>Course</legend>
+            <p><label>Department *<br>
+              <input type="text" class="department" value="ITSC" placeholder="Department (for example ITIS)" required></label></p>
+            <p><label>Number *<br>
+              <input type="text" class="courseNumber" value="2181" placeholder="Course number (for example 3135)" required></label></p>
+            <p><label>Name *<br>
+              <input type="text" class="courseTitle" size="50" value="Command Line Hacker" placeholder="Course name" required></label></p>
+            <p><label>Reason *<br>
+              <textarea class="reasonForTaking" rows="2" cols="70" placeholder="Why are you taking this course?" required>I'm learning to work in the Linux command line, which is essential for security work.</textarea></label></p>
+          </fieldset>
+        </div>
+        <p><button type="button" id="addCourse">Add Course</button></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Quote</legend>
+        <p><label>Quote *<br>
+          <textarea id="quote" name="quote" rows="2" cols="70" placeholder="Favorite quote" required>Talk is cheap. Show me the code.</textarea></label></p>
+        <p><label>Quote Author *<br>
+          <input type="text" id="quoteAuthor" name="quoteAuthor" value="Linus Torvalds" placeholder="Who said it?" required></label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extras</legend>
+        <p><label>Funny Thing (optional)<br>
+          <textarea id="funnyItem" name="funnyItem" rows="2" cols="70" placeholder="Something funny about you"></textarea></label></p>
+        <p><label>Something I Would Like to Share (optional)<br>
+          <textarea id="somethingToShare" name="somethingToShare" rows="2" cols="70" placeholder="Anything else you want to share"></textarea></label></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Links</legend>
+        <p><label>Link 1 Label *<br>
+          <input type="text" class="linkLabel" value="CLT Web" placeholder="Link label" required></label><br>
+          <label>Link 1 URL *<br>
+          <input type="url" class="linkUrl" size="50" value="https://webpages.charlotte.edu/jafunwi/" placeholder="https://..." required></label></p>
+        <p><label>Link 2 Label *<br>
+          <input type="text" class="linkLabel" value="GitHub.io" placeholder="Link label" required></label><br>
+          <label>Link 2 URL *<br>
+          <input type="url" class="linkUrl" size="50" value="https://jafunwi.github.io/" placeholder="https://..." required></label></p>
+        <p><label>Link 3 Label *<br>
+          <input type="text" class="linkLabel" value="GitHub" placeholder="Link label" required></label><br>
+          <label>Link 3 URL *<br>
+          <input type="url" class="linkUrl" size="50" value="https://github.com/Jafunwi" placeholder="https://..." required></label></p>
+        <p><label>Link 4 Label *<br>
+          <input type="text" class="linkLabel" value="freeCodeCamp" placeholder="Link label" required></label><br>
+          <label>Link 4 URL *<br>
+          <input type="url" class="linkUrl" size="50" value="https://www.freecodecamp.org/Jafunwi" placeholder="https://..." required></label></p>
+        <p><label>Link 5 Label *<br>
+          <input type="text" class="linkLabel" value="Codecademy" placeholder="Link label" required></label><br>
+          <label>Link 5 URL *<br>
+          <input type="url" class="linkUrl" size="50" value="https://www.codecademy.com/profiles/jafunwi" placeholder="https://..." required></label></p>
+        <p><label>Link 6 Label *<br>
+          <input type="text" class="linkLabel" value="LinkedIn" placeholder="Link label" required></label><br>
+          <label>Link 6 URL *<br>
+          <input type="url" class="linkUrl" size="50" value="https://www.linkedin.com/in/john-afunwi-372287334/" placeholder="https://..." required></label></p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" id="clearBtn">Clear</button>
+      </p>
+    </form>
+  </main>
+
+  <footer>
+    <small>&copy; 2026 John Afunwi | <a href="afunwidesigns.com/index.html">Afunwifirm</a></small>
+    <ul>
+      <li><a href="https://webpages.charlotte.edu/jafunwi/">CLT Web</a></li>
+      <li><a href="https://jafunwi.github.io/">GitHub.io</a></li>
+      <li><a href="https://github.com/Jafunwi">GitHub</a></li>
+      <li><a href="https://www.freecodecamp.org/Jafunwi">freeCodeCamp</a></li>
+      <li><a href="https://www.codecademy.com/profiles/jafunwi">Codecademy</a></li>
+      <li><a href="https://www.linkedin.com/in/john-afunwi-372287334/">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+  <script src="scripts/introduction.js" defer></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
