@@ -5,29 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cybersecurity Portfolio</title>
 <style>
-body { font-family: Arial, sans-serif; background: #0a0a0a; color: #e0e0e0; margin: 0; padding: 0; }
-header { background: #1a1a2e; padding: 40px 20px; text-align: center; border-bottom: 2px solid #00ff88; }
-h1 { color: #00ff88; font-size: 2em; margin: 0; }
-p.subtitle { color: #aaa; margin-top: 10px; }
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --border: #334155;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-2: #818cf8;
+}
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+header { background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 60%, #0c4a6e 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 3px solid var(--accent); }
+h1 { color: #fff; font-size: 2.6em; margin: 0; letter-spacing: 0.5px; }
+p.subtitle { color: var(--accent); margin-top: 12px; font-size: 1.05em; }
+.cta { text-align: center; margin: 30px 0 0; }
+.btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 10px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; }
+.btn:hover { background: #7dd3fc; }
 .section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-h2 { color: #00ff88; border-bottom: 1px solid #333; padding-bottom: 10px; }
-.card { background: #1a1a2e; border-radius: 8px; padding: 20px; margin-bottom: 20px; border-left: 4px solid #00ff88; }
+h2 { color: #fff; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+h2::before { content: ""; display: inline-block; width: 8px; height: 1em; background: var(--accent); border-radius: 2px; margin-right: 10px; vertical-align: -0.12em; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid var(--accent-2); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); }
 .card h3 { color: #fff; margin-top: 0; }
-.tag { display: inline-block; background: #00ff88; color: #000; padding: 3px 10px; border-radius: 20px; font-size: 0.8em; margin: 3px; font-weight: bold; }
-.skills { display: flex; flex-wrap: wrap; gap: 10px; }
-.screenshot { width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #333; }
-.screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+.tag { display: inline-block; background: rgba(56, 189, 248, 0.15); color: var(--accent); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 12px; border-radius: 999px; font-size: 0.8em; margin: 3px; font-weight: 600; }
+.skills { display: flex; flex-wrap: wrap; gap: 8px; }
+.screenshot { width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid var(--border); }
+.screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
 .screenshot-item { text-align: center; }
-.screenshot-item p { color: #aaa; font-size: 0.85em; margin: 5px 0; }
-footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #222; margin-top: 40px; }
+.screenshot-item p { color: var(--muted); font-size: 0.85em; margin: 5px 0; }
+footer { text-align: center; padding: 30px 20px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 40px; background: #0b1220; }
+footer a { color: var(--accent); margin: 0 10px; }
+@media (max-width: 600px) {
+  .screenshot-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 2em; }
+}
 </style>
+<script src="https://lint.page/kit/4d0fe3.js"></script>
 </head>
 <body>
 <header>
 <h1>John Afunwi</h1>
 <p class="subtitle">Cybersecurity Enthusiast | SOC Analyst in Training | GCP | ELK Stack</p>
 </header>
-<p><a href="itis3135/" style="color:#00ff88;">click to go to my ITIS3135 site</a></p>
+<div class="cta"><a class="btn" href="itis3135/">Click to go to my ITIS3135 site</a></div>
 <div class="section">
 <h2>About Me</h2>
 <p>Aspiring cybersecurity professional with hands-on experience building and operating a home SOC lab. Passionate about threat detection, log analysis, and defending systems against real-world attacks.</p>
@@ -88,7 +108,7 @@ footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #
 </div>
 
 <div class="section">
-<h2>Certifications & Learning</h2>
+<h2>Certifications &amp; Learning</h2>
 <div class="card">
 <h3>In Progress</h3>
 <p>CompTIA Security+ — Studying via Professor Messer</p>
@@ -99,8 +119,8 @@ footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #
 <footer>
 <p>John Afunwi — Cybersecurity Portfolio — jafunwi.github.io</p>
 <p>
-<a id="validation_link_html" href="https://validator.w3.org/check?uri=referer" style="color:#00ff88; margin-right:15px;">Validate HTML</a>
-<a id="validation_link_css" href="https://jigsaw.w3.org/css-validator/check/referer" style="color:#00ff88;">Validate CSS</a>
+<a id="validation_link_html" href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
+<a id="validation_link_css" href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
 </p>
 </footer>
 
@@ -108,5 +128,6 @@ footer { text-align: center; padding: 30px; color: #555; border-top: 1px solid #
 document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
 document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
 </script>
+<script src="https://divonbriesen.github.io/teaching/tools/standards-check.js"></script>
 </body>
 </html>
