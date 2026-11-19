@@ -222,29 +222,27 @@
       lastName: val("lastName"),
       acknowledgment: val("acknowledgment"),
       acknowledgmentDate: val("acknowledgmentDate"),
-      mascot: {
-        adjective: val("adjectives"),
-        animal: val("animal"),
-        divider: val("prettyNameDivider")
+      prettyNameDivider: val("prettyNameDivider"),
+      adjectives: val("adjectives"),
+      animal: val("animal"),
+      img: currentImgSrc(),
+      pictureAlt: val("pictureAlt"),
+      caption: val("caption"),
+      personalInfo: {
+        statement: val("statement"),
+        personalBackground: val("personalBackground"),
+        professionalBackground: val("professionalBackground"),
+        academicBackground: val("academicBackground"),
+        primaryWorkComputer: val("primaryWorkComputer"),
+        primaryWorkLocation: val("primaryWorkLocation"),
+        alternateComputerLocation: val("alternateComputerLocation")
       },
-      image: {
-        src: currentImgSrc(),
-        alt: val("pictureAlt"),
-        caption: val("caption")
-      },
-      statement: val("statement"),
-      personalBackground: val("personalBackground"),
-      professionalBackground: val("professionalBackground"),
-      academicBackground: val("academicBackground"),
-      primaryWorkComputer: val("primaryWorkComputer"),
-      primaryWorkLocation: val("primaryWorkLocation"),
-      alternateComputer: val("alternateComputerLocation"),
       courses: [],
       quote: val("quote"),
       quoteAuthor: val("quoteAuthor"),
       funnyItem: val("funnyItem"),
       somethingToShare: val("somethingToShare"),
-      links: []
+      footerLinks: []
     };
 
     var courses = coursesDiv.querySelectorAll(".course");
@@ -261,7 +259,7 @@
     var labels = form.querySelectorAll(".linkLabel");
     var urls = form.querySelectorAll(".linkUrl");
     for (var j = 0; j < labels.length; j++) {
-      data.links.push({
+      data.footerLinks.push({
         label: labels[j].value.trim(),
         url: urls[j].value.trim()
       });
@@ -274,30 +272,29 @@
   }
 
   function buildXml(d) {
-    var x = '<?xml version="1.0" encoding="UTF-8"?>\n<introduction>\n';
+    var p = d.personalInfo;
+    var x = '<?xml version="1.0" encoding="UTF-8"?>\n<introductionData>\n';
     x += tag("firstName", d.firstName, "  ");
     x += tag("middleName", d.middleName, "  ");
     x += tag("nickname", d.nickname, "  ");
     x += tag("lastName", d.lastName, "  ");
     x += tag("acknowledgment", d.acknowledgment, "  ");
     x += tag("acknowledgmentDate", d.acknowledgmentDate, "  ");
-    x += "  <mascot>\n";
-    x += tag("adjective", d.mascot.adjective, "    ");
-    x += tag("animal", d.mascot.animal, "    ");
-    x += tag("divider", d.mascot.divider, "    ");
-    x += "  </mascot>\n";
-    x += "  <image>\n";
-    x += tag("src", d.image.src, "    ");
-    x += tag("alt", d.image.alt, "    ");
-    x += tag("caption", d.image.caption, "    ");
-    x += "  </image>\n";
-    x += tag("statement", d.statement, "  ");
-    x += tag("personalBackground", d.personalBackground, "  ");
-    x += tag("professionalBackground", d.professionalBackground, "  ");
-    x += tag("academicBackground", d.academicBackground, "  ");
-    x += tag("primaryWorkComputer", d.primaryWorkComputer, "  ");
-    x += tag("primaryWorkLocation", d.primaryWorkLocation, "  ");
-    x += tag("alternateComputer", d.alternateComputer, "  ");
+    x += tag("prettyNameDivider", d.prettyNameDivider, "  ");
+    x += tag("adjectives", d.adjectives, "  ");
+    x += tag("animal", d.animal, "  ");
+    x += tag("img", d.img, "  ");
+    x += tag("pictureAlt", d.pictureAlt, "  ");
+    x += tag("caption", d.caption, "  ");
+    x += "  <personalInfo>\n";
+    x += tag("statement", p.statement, "    ");
+    x += tag("personalBackground", p.personalBackground, "    ");
+    x += tag("professionalBackground", p.professionalBackground, "    ");
+    x += tag("academicBackground", p.academicBackground, "    ");
+    x += tag("primaryWorkComputer", p.primaryWorkComputer, "    ");
+    x += tag("primaryWorkLocation", p.primaryWorkLocation, "    ");
+    x += tag("alternateComputerLocation", p.alternateComputerLocation, "    ");
+    x += "  </personalInfo>\n";
     x += "  <courses>\n";
     for (var i = 0; i < d.courses.length; i++) {
       x += "    <course>\n";
@@ -312,15 +309,15 @@
     x += tag("quoteAuthor", d.quoteAuthor, "  ");
     x += tag("funnyItem", d.funnyItem, "  ");
     x += tag("somethingToShare", d.somethingToShare, "  ");
-    x += "  <links>\n";
-    for (var j = 0; j < d.links.length; j++) {
+    x += "  <footerLinks>\n";
+    for (var j = 0; j < d.footerLinks.length; j++) {
       x += "    <link>\n";
-      x += tag("label", d.links[j].label, "      ");
-      x += tag("url", d.links[j].url, "      ");
+      x += tag("label", d.footerLinks[j].label, "      ");
+      x += tag("url", d.footerLinks[j].url, "      ");
       x += "    </link>\n";
     }
-    x += "  </links>\n";
-    x += "</introduction>\n";
+    x += "  </footerLinks>\n";
+    x += "</introductionData>\n";
     return x;
   }
 
