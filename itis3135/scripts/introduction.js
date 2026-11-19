@@ -250,9 +250,9 @@
       var c = courses[i];
       data.courses.push({
         department: c.querySelector(".department").value.trim(),
-        number: c.querySelector(".courseNumber").value.trim(),
-        name: c.querySelector(".courseTitle").value.trim(),
-        reason: c.querySelector(".reasonForTaking").value.trim()
+        courseNumber: c.querySelector(".courseNumber").value.trim(),
+        courseTitle: c.querySelector(".courseTitle").value.trim(),
+        reasonForTaking: c.querySelector(".reasonForTaking").value.trim()
       });
     }
 
@@ -299,9 +299,9 @@
     for (var i = 0; i < d.courses.length; i++) {
       x += "    <course>\n";
       x += tag("department", d.courses[i].department, "      ");
-      x += tag("number", d.courses[i].number, "      ");
-      x += tag("name", d.courses[i].name, "      ");
-      x += tag("reason", d.courses[i].reason, "      ");
+      x += tag("courseNumber", d.courses[i].courseNumber, "      ");
+      x += tag("courseTitle", d.courses[i].courseTitle, "      ");
+      x += tag("reasonForTaking", d.courses[i].reasonForTaking, "      ");
       x += "    </course>\n";
     }
     x += "  </courses>\n";

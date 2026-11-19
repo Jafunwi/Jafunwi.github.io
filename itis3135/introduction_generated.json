@@ -1,0 +1,67 @@
+{
+  "firstName": "John",
+  "middleName": "",
+  "nickname": "J",
+  "lastName": "Afunwi",
+  "acknowledgment": "I understand that this is a public document, and I won't put anything here I wouldn't want anyone to see.",
+  "acknowledgmentDate": "11/2/26",
+  "prettyNameDivider": "|",
+  "adjectives": "Jovial",
+  "animal": "Albatross",
+  "img": "images/john-afunwi-profile.jpg",
+  "pictureAlt": "Portrait of John Afunwi",
+  "caption": "",
+  "personalInfo": {
+    "statement": "",
+    "personalBackground": "I learn best by doing, so I spend my free time on hands-on projects, from tinkering with hardware to baking and following sports.",
+    "professionalBackground": "I'm building my experience through IT certifications and portfolio projects, including a SOC analyst home lab and a mobile password tracker app.",
+    "academicBackground": "Computer science student at UNC Charlotte, working toward IT certifications alongside my coursework.",
+    "primaryWorkComputer": "A Windows laptop, where I use VS Code, PowerShell and MSYS2.",
+    "primaryWorkLocation": "my dorm room or the library.",
+    "alternateComputerLocation": "Campus computer."
+  },
+  "courses": [
+    {
+      "department": "ITIS",
+      "courseNumber": "3135",
+      "courseTitle": "Front-End Web Application Development",
+      "reasonForTaking": "I want to build a strong web portfolio and learn clean, accessible HTML and CSS."
+    },
+    {
+      "department": "ITSC",
+      "courseNumber": "2181",
+      "courseTitle": "Command Line Hacker",
+      "reasonForTaking": "I'm learning to work in the Linux command line, which is essential for security work."
+    }
+  ],
+  "quote": "Talk is cheap. Show me the code.",
+  "quoteAuthor": "Linus Torvalds",
+  "funnyItem": "",
+  "somethingToShare": "",
+  "footerLinks": [
+    {
+      "label": "CLT Web",
+      "url": "https://webpages.charlotte.edu/jafunwi/"
+    },
+    {
+      "label": "GitHub.io",
+      "url": "https://jafunwi.github.io/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Jafunwi"
+    },
+    {
+      "label": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/Jafunwi"
+    },
+    {
+      "label": "Codecademy",
+      "url": "https://www.codecademy.com/profiles/jafunwi"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/john-afunwi-372287334/"
+    }
+  ]
+}
