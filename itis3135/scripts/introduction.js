@@ -17,6 +17,15 @@
     return div.innerHTML;
   }
 
+  function escapeXml(text) {
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;");
+  }
+
   function val(id) {
     return document.getElementById(id).value.trim();
   }
@@ -110,7 +119,7 @@
     return '    <p><strong>' + label + ':</strong> ' + escapeHtml(text) + '</p>\n';
   }
 
-  function showResult(imgSrc) {
+  function buildIntroHtml(imgSrc) {
     var first = val("firstName");
     var middle = val("middleName");
     var nick = val("nickname");
@@ -179,8 +188,11 @@
     }
 
     html += '\n    <p><a href="introduction_form.html">Reset</a></p>\n';
+    return html;
+  }
 
-    main.innerHTML = html;
+  function showResult(imgSrc) {
+    main.innerHTML = buildIntroHtml(imgSrc);
 
     // Update the footer links with the submitted values.
     var labels = form.querySelectorAll(".linkLabel");
@@ -194,4 +206,168 @@
 
     window.scrollTo(0, 0);
   }
+
+  // ---------- Generate HTML / JSON / XML ----------
+  function currentImgSrc() {
+    var fileInput = document.getElementById("img");
+    var file = fileInput.files && fileInput.files[0];
+    return file ? "images/" + file.name : DEFAULT_IMG;
+  }
+
+  function collectData() {
+    var data = {
+      firstName: val("firstName"),
+      middleName: val("middleName"),
+      nickname: val("nickname"),
+      lastName: val("lastName"),
+      acknowledgment: val("acknowledgment"),
+      acknowledgmentDate: val("acknowledgmentDate"),
+      mascot: {
+        adjective: val("adjectives"),
+        animal: val("animal"),
+        divider: val("prettyNameDivider")
+      },
+      image: {
+        src: currentImgSrc(),
+        alt: val("pictureAlt"),
+        caption: val("caption")
+      },
+      statement: val("statement"),
+      personalBackground: val("personalBackground"),
+      professionalBackground: val("professionalBackground"),
+      academicBackground: val("academicBackground"),
+      primaryWorkComputer: val("primaryWorkComputer"),
+      primaryWorkLocation: val("primaryWorkLocation"),
+      alternateComputer: val("alternateComputerLocation"),
+      courses: [],
+      quote: val("quote"),
+      quoteAuthor: val("quoteAuthor"),
+      funnyItem: val("funnyItem"),
+      somethingToShare: val("somethingToShare"),
+      links: []
+    };
+
+    var courses = coursesDiv.querySelectorAll(".course");
+    for (var i = 0; i < courses.length; i++) {
+      var c = courses[i];
+      data.courses.push({
+        department: c.querySelector(".department").value.trim(),
+        number: c.querySelector(".courseNumber").value.trim(),
+        name: c.querySelector(".courseTitle").value.trim(),
+        reason: c.querySelector(".reasonForTaking").value.trim()
+      });
+    }
+
+    var labels = form.querySelectorAll(".linkLabel");
+    var urls = form.querySelectorAll(".linkUrl");
+    for (var j = 0; j < labels.length; j++) {
+      data.links.push({
+        label: labels[j].value.trim(),
+        url: urls[j].value.trim()
+      });
+    }
+    return data;
+  }
+
+  function tag(name, text, indent) {
+    return indent + "<" + name + ">" + escapeXml(text) + "</" + name + ">\n";
+  }
+
+  function buildXml(d) {
+    var x = '<?xml version="1.0" encoding="UTF-8"?>\n<introduction>\n';
+    x += tag("firstName", d.firstName, "  ");
+    x += tag("middleName", d.middleName, "  ");
+    x += tag("nickname", d.nickname, "  ");
+    x += tag("lastName", d.lastName, "  ");
+    x += tag("acknowledgment", d.acknowledgment, "  ");
+    x += tag("acknowledgmentDate", d.acknowledgmentDate, "  ");
+    x += "  <mascot>\n";
+    x += tag("adjective", d.mascot.adjective, "    ");
+    x += tag("animal", d.mascot.animal, "    ");
+    x += tag("divider", d.mascot.divider, "    ");
+    x += "  </mascot>\n";
+    x += "  <image>\n";
+    x += tag("src", d.image.src, "    ");
+    x += tag("alt", d.image.alt, "    ");
+    x += tag("caption", d.image.caption, "    ");
+    x += "  </image>\n";
+    x += tag("statement", d.statement, "  ");
+    x += tag("personalBackground", d.personalBackground, "  ");
+    x += tag("professionalBackground", d.professionalBackground, "  ");
+    x += tag("academicBackground", d.academicBackground, "  ");
+    x += tag("primaryWorkComputer", d.primaryWorkComputer, "  ");
+    x += tag("primaryWorkLocation", d.primaryWorkLocation, "  ");
+    x += tag("alternateComputer", d.alternateComputer, "  ");
+    x += "  <courses>\n";
+    for (var i = 0; i < d.courses.length; i++) {
+      x += "    <course>\n";
+      x += tag("department", d.courses[i].department, "      ");
+      x += tag("number", d.courses[i].number, "      ");
+      x += tag("name", d.courses[i].name, "      ");
+      x += tag("reason", d.courses[i].reason, "      ");
+      x += "    </course>\n";
+    }
+    x += "  </courses>\n";
+    x += tag("quote", d.quote, "  ");
+    x += tag("quoteAuthor", d.quoteAuthor, "  ");
+    x += tag("funnyItem", d.funnyItem, "  ");
+    x += tag("somethingToShare", d.somethingToShare, "  ");
+    x += "  <links>\n";
+    for (var j = 0; j < d.links.length; j++) {
+      x += "    <link>\n";
+      x += tag("label", d.links[j].label, "      ");
+      x += tag("url", d.links[j].url, "      ");
+      x += "    </link>\n";
+    }
+    x += "  </links>\n";
+    x += "</introduction>\n";
+    return x;
+  }
+
+  function showOutput(title, text) {
+    var out = document.getElementById("output");
+    if (!out) {
+      out = document.createElement("section");
+      out.id = "output";
+      main.appendChild(out);
+    }
+    out.innerHTML = "";
+
+    var heading = document.createElement("h3");
+    heading.textContent = title;
+    out.appendChild(heading);
+
+    var label = document.createElement("label");
+    label.setAttribute("for", "outputText");
+    label.textContent = title + " code";
+    out.appendChild(label);
+    out.appendChild(document.createElement("br"));
+
+    var area = document.createElement("textarea");
+    area.id = "outputText";
+    area.readOnly = true;
+    area.rows = 24;
+    area.cols = 90;
+    area.value = text;
+    out.appendChild(area);
+
+    out.scrollIntoView();
+  }
+
+  function generate(kind) {
+    if (!form.reportValidity()) {
+      return;
+    }
+    if (kind === "html") {
+      showOutput("Generated HTML", buildIntroHtml(currentImgSrc()));
+    } else if (kind === "json") {
+      showOutput("Generated JSON", JSON.stringify(collectData(), null, 2));
+    } else {
+      showOutput("Generated XML", buildXml(collectData()));
+    }
+  }
+
+  document.getElementById("genHtml").addEventListener("click", function () { generate("html"); });
+  document.getElementById("genJson").addEventListener("click", function () { generate("json"); });
+  document.getElementById("genXml").addEventListener("click", function () { generate("xml"); });
 })();
