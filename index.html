@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cybersecurity Portfolio</title>
+<title>John Afunwi | Cybersecurity Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <style>
 :root {
   --bg: #0f172a;
@@ -13,108 +14,126 @@
   --muted: #94a3b8;
   --accent: #38bdf8;
   --accent-2: #818cf8;
+  --heading-font: Georgia, "Times New Roman", serif;
 }
 * { box-sizing: border-box; }
-body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+html { background: var(--bg); }
+body { font-family: "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); max-width: 960px; margin: 0 auto; padding: 0; line-height: 1.6; }
 header { background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 60%, #0c4a6e 100%); padding: 60px 20px 50px; text-align: center; border-bottom: 3px solid var(--accent); }
-h1 { color: #fff; font-size: 2.6em; margin: 0; letter-spacing: 0.5px; }
-p.subtitle { color: var(--accent); margin-top: 12px; font-size: 1.05em; }
-.cta { text-align: center; margin: 30px 0 0; }
-.btn { display: inline-block; background: var(--accent); color: #0f172a; padding: 10px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; }
-.btn:hover { background: #7dd3fc; }
-.section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-h2 { color: #fff; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
-h2::before { content: ""; display: inline-block; width: 8px; height: 1em; background: var(--accent); border-radius: 2px; margin-right: 10px; vertical-align: -0.12em; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid var(--accent-2); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); }
-.card h3 { color: #fff; margin-top: 0; }
-.tag { display: inline-block; background: rgba(56, 189, 248, 0.15); color: var(--accent); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 12px; border-radius: 999px; font-size: 0.8em; margin: 3px; font-weight: 600; }
-.skills { display: flex; flex-wrap: wrap; gap: 8px; }
-.screenshot { width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid var(--border); }
+/* white heading text is used for contrast against the dark background */
+h1 { color: #fff; font-family: var(--heading-font); font-size: clamp(2em, 6vw, 2.6em); margin: 0; letter-spacing: 0.5px; }
+header p { color: var(--accent); margin-top: 12px; font-size: 1.05em; }
+a, a:visited { color: var(--accent); }
+nav { text-align: center; margin: 30px 0 0; }
+nav a, nav a:visited { display: inline-block; background: var(--accent); color: #0f172a; padding: 10px 22px; border-radius: 999px; font-weight: 600; text-decoration: none; }
+nav a:hover { background: #7dd3fc; }
+main { padding: 0 20px; }
+/* white heading text is used for contrast against the dark background */
+h2 { color: #fff; font-family: var(--heading-font); margin: 40px 0 10px; }
+section { margin: 30px 0; }
+/* white heading text is used for contrast against the dark background */
+h3 { color: #fff; font-family: var(--heading-font); border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+h3::before { content: ""; display: inline-block; width: 8px; height: 1em; background: var(--accent); border-radius: 2px; margin-right: 10px; vertical-align: -0.12em; }
+/* black shadow is used to lift the card off the dark background */
+article { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid var(--accent-2); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); }
+/* white heading text is used for contrast against the dark card */
+h4 { color: #fff; font-family: var(--heading-font); margin-top: 0; }
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; }
+.tags li { background: rgba(56, 189, 248, 0.15); color: var(--accent); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 12px; border-radius: 999px; font-size: 0.8em; font-weight: 600; }
 .screenshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
-.screenshot-item { text-align: center; }
-.screenshot-item p { color: var(--muted); font-size: 0.85em; margin: 5px 0; }
+figure { margin: 0; text-align: center; }
+figure img { width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid var(--border); }
+figcaption { color: var(--muted); font-size: 0.85em; margin: 5px 0; }
 footer { text-align: center; padding: 30px 20px; color: var(--muted); border-top: 1px solid var(--border); margin-top: 40px; background: #0b1220; }
-footer a { color: var(--accent); margin: 0 10px; }
+footer a, footer a:visited { margin: 0 10px; }
 @media (max-width: 600px) {
   .screenshot-grid { grid-template-columns: 1fr; }
-  h1 { font-size: 2em; }
 }
 </style>
 <script src="https://lint.page/kit/4d0fe3.js"></script>
 </head>
 <body>
+<!-- Comment: one div is used because the screenshot grid needs a generic layout wrapper with no semantic element. No spans are used. The class screenshot-grid styles that grid, the class tags styles the tag lists, and the two ids on the footer links are required by the validator script at the bottom of the page. -->
 <header>
 <h1>John Afunwi</h1>
-<p class="subtitle">Cybersecurity Enthusiast | SOC Analyst in Training | GCP | ELK Stack</p>
+<p><em>Cybersecurity Enthusiast | SOC Analyst in Training | GCP | ELK Stack</em></p>
 </header>
-<div class="cta"><a class="btn" href="itis3135/">Click to go to my ITIS3135 site</a></div>
-<div class="section">
-<h2>About Me</h2>
-<p>Aspiring cybersecurity professional with hands-on experience building and operating a home SOC lab. Passionate about threat detection, log analysis, and defending systems against real-world attacks.</p>
-</div>
+<nav>
+<a href="itis3135/">Click to go to my ITIS3135 site</a>
+</nav>
+<main>
+<h2>Cybersecurity Portfolio</h2>
 
-<div class="section">
-<h2>Projects</h2>
-<div class="card">
-<h3>Home SOC Lab — ELK Stack SIEM on Google Cloud Platform</h3>
+<section>
+<h3>About Me</h3>
+<p>Aspiring cybersecurity professional with hands-on experience building and operating a home SOC lab. Passionate about threat detection, log analysis, and defending systems against real-world attacks.</p>
+</section>
+
+<section>
+<h3>Projects</h3>
+<article>
+<h4>Home SOC Lab: ELK Stack SIEM on Google Cloud Platform</h4>
 <p>Deployed a fully functional SIEM environment on a Google Cloud Platform VM using Docker containers. Configured Filebeat to ingest Linux authentication logs in real time into Elasticsearch. Used Kibana to detect and investigate a live SSH brute force attack, tracing the attacker to Jakarta, Indonesia via threat intelligence lookup.</p>
 <p><strong>Key findings:</strong> 706+ brute force attempts detected, attacker IP 43.133.148.170 identified as Tencent-hosted infrastructure in Indonesia.</p>
 
 <div class="screenshot-grid">
-<div class="screenshot-item">
-<img src="IMG_0245.jpeg" class="screenshot" alt="Filebeat Running">
-<p>Filebeat active and shipping logs</p>
-</div>
-<div class="screenshot-item">
-<img src="IMG_0247.jpeg" class="screenshot" alt="Kibana Dashboard">
-<p>Kibana SOC monitoring dashboard</p>
-</div>
-<div class="screenshot-item">
-<img src="IMG_0248.jpeg" class="screenshot" alt="Brute Force Detection">
-<p>706 SSH brute force attempts detected</p>
-</div>
-<div class="screenshot-item">
-<img src="IMG_0249.jpeg" class="screenshot" alt="Threat Intelligence">
-<p>Attacker traced to Jakarta, Indonesia</p>
-</div>
-</div>
-
-<span class="tag">ELK Stack</span>
-<span class="tag">Filebeat</span>
-<span class="tag">Google Cloud</span>
-<span class="tag">Docker</span>
-<span class="tag">Linux</span>
-<span class="tag">Threat Intelligence</span>
-<span class="tag">KQL</span>
-</div>
+<figure>
+<img src="images/filebeat-running.jpeg" alt="Filebeat Running">
+<figcaption>Filebeat active and shipping logs</figcaption>
+</figure>
+<figure>
+<img src="images/kibana-dashboard.jpeg" alt="Kibana Dashboard">
+<figcaption>Kibana SOC monitoring dashboard</figcaption>
+</figure>
+<figure>
+<img src="images/brute-force-detection.jpeg" alt="Brute Force Detection">
+<figcaption>706 SSH brute force attempts detected</figcaption>
+</figure>
+<figure>
+<img src="images/threat-intelligence.jpeg" alt="Threat Intelligence">
+<figcaption>Attacker traced to Jakarta, Indonesia</figcaption>
+</figure>
 </div>
 
-<div class="section">
-<h2>Skills</h2>
-<div class="skills">
-<span class="tag">SIEM</span>
-<span class="tag">Elasticsearch</span>
-<span class="tag">Kibana</span>
-<span class="tag">Filebeat</span>
-<span class="tag">Log Analysis</span>
-<span class="tag">Google Cloud Platform</span>
-<span class="tag">Docker</span>
-<span class="tag">Linux</span>
-<span class="tag">KQL</span>
-<span class="tag">Threat Detection</span>
-<span class="tag">SSH</span>
-<span class="tag">Network Security</span>
-</div>
-</div>
+<ul class="tags">
+<li>ELK Stack</li>
+<li>Filebeat</li>
+<li>Google Cloud</li>
+<li>Docker</li>
+<li>Linux</li>
+<li>Threat Intelligence</li>
+<li>KQL</li>
+</ul>
+</article>
+</section>
 
-<div class="section">
-<h2>Certifications &amp; Learning</h2>
-<div class="card">
-<h3>In Progress</h3>
+<section>
+<h3>Skills</h3>
+<ul class="tags">
+<li>SIEM</li>
+<li>Elasticsearch</li>
+<li>Kibana</li>
+<li>Filebeat</li>
+<li>Log Analysis</li>
+<li>Google Cloud Platform</li>
+<li>Docker</li>
+<li>Linux</li>
+<li>KQL</li>
+<li>Threat Detection</li>
+<li>SSH</li>
+<li>Network Security</li>
+</ul>
+</section>
+
+<section>
+<h3>Certifications &amp; Learning</h3>
+<article>
+<h4>In Progress</h4>
 <p>CompTIA Security+ — Studying via Professor Messer</p>
 <p>TryHackMe — SOC Level 1 Learning Path</p>
-</div>
-</div>
+</article>
+</section>
+</main>
 
 <footer>
 <p>John Afunwi — Cybersecurity Portfolio — jafunwi.github.io</p>
