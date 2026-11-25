@@ -28,27 +28,23 @@ body {
   line-height: 1.6;
 }
 
-/* Headings use a second font, a clean sans-serif, to contrast with the serif body text. */
-h1,
-h2,
-h3 {
-  font-family: "Trebuchet MS", sans-serif;
-}
-
 h1 {
   margin: 0;
   color: var(--foam);
-  font-size: 2.2rem;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
   letter-spacing: 0.05em;
 }
 
 h2 {
+  font-family: "Trebuchet MS", sans-serif;
   color: var(--sea);
   border-bottom: 2px dotted var(--coral);
   padding-bottom: 0.25rem;
 }
 
 h3 {
+  font-family: "Trebuchet MS", sans-serif;
   color: var(--deep);
 }
 
@@ -223,10 +219,6 @@ footer a:hover {
 
 /* Small screens: smaller title, stacked nav, and labels above their inputs. */
 @media (max-width: 40rem) {
-  h1 {
-    font-size: 1.6rem;
-  }
-
   nav ul {
     flex-direction: column;
   }
