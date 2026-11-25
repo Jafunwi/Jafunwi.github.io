@@ -140,3 +140,57 @@ footer a {
 footer a:hover {
   color: #fff;
 }
+fieldset {
+  border: 2px dotted var(--coral);
+  border-radius: 1rem;
+  background: #fff;
+  padding: 1rem;
+}
+
+legend {
+  padding: 0 0.5rem;
+  color: var(--sea);
+  font-weight: bold;
+}
+
+label {
+  display: inline-block;
+  min-width: 11rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input[type="number"] {
+  width: 5rem;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--sea);
+  border-radius: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1.25rem;
+  color: #fff;
+  background: var(--sea);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--coral);
+}
+
+main p[id] {
+  font-weight: bold;
+  color: var(--deep);
+}
+select {
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--sea);
+  border-radius: 0.5rem;
+  background: #fff;
+}

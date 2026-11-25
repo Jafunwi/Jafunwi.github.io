@@ -10,22 +10,12 @@
 </head>
 <body>
   <div data-include="components/header.html"></div>
-
-  <nav aria-label="Main menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="hours.html" aria-current="page">Hours</a></li>
-      <li><a href="location.html">Location</a></li>
-      <li><a href="why.html">Why</a></li>
-      <li><a href="how.html">How</a></li>
-    </ul>
-  </nav>
+  <div data-include="components/nav.html"></div>
 
   <main>
     <h2>Hours</h2>
     <img src="images/sunrise.svg" alt="A red sun rising over blue ocean waves" width="240" height="200">
+    <p id="cart-status" aria-live="polite">Checking whether the cart is open...</p>
     <p>The cart follows the weather and the tide, so we open when the beach is busiest and close when the sun goes down. Most days you can find us from late morning through early evening.</p>
     <table>
       <caption>Weekly hours</caption>
@@ -60,6 +50,8 @@
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/include.min.js"></script>
+  <script src="scripts/site.js"></script>
+  <script src="scripts/status.js"></script>
   <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

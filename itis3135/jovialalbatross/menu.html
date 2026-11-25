@@ -10,18 +10,7 @@
 </head>
 <body>
   <div data-include="components/header.html"></div>
-
-  <nav aria-label="Main menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html" aria-current="page">Menu</a></li>
-      <li><a href="hours.html">Hours</a></li>
-      <li><a href="location.html">Location</a></li>
-      <li><a href="why.html">Why</a></li>
-      <li><a href="how.html">How</a></li>
-    </ul>
-  </nav>
+  <div data-include="components/nav.html"></div>
 
   <main>
     <h2>The Four Winds</h2>
@@ -60,11 +49,39 @@
       </tbody>
     </table>
     <p>Every tea comes in one size, a generous 16 ounces. If you cannot decide, ask for a flight of four small cups to share, and you can taste the whole coast in one sitting.</p>
+
+    <h2>Plan Your Order</h2>
+    <p>Choose how many of each tea you want, and the total updates as you go. This is just a planner, so you still order at the cart.</p>
+    <form id="order-form">
+      <fieldset>
+        <legend>Your teas</legend>
+        <p>
+          <label for="trade-wind">Trade Wind ($4.50)</label>
+          <input type="number" id="trade-wind" name="trade-wind" min="0" max="10" value="0" data-price="4.50">
+        </p>
+        <p>
+          <label for="doldrums">Doldrums ($4.50)</label>
+          <input type="number" id="doldrums" name="doldrums" min="0" max="10" value="0" data-price="4.50">
+        </p>
+        <p>
+          <label for="sea-breeze">Sea Breeze ($4.75)</label>
+          <input type="number" id="sea-breeze" name="sea-breeze" min="0" max="10" value="0" data-price="4.75">
+        </p>
+        <p>
+          <label for="gale">Gale ($5.00)</label>
+          <input type="number" id="gale" name="gale" min="0" max="10" value="0" data-price="5.00">
+        </p>
+      </fieldset>
+      <button type="button" id="clear-order">Clear order</button>
+    </form>
+    <p id="order-total" aria-live="polite"></p>
   </main>
 
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/include.min.js"></script>
+  <script src="scripts/site.js"></script>
+  <script src="scripts/order.js"></script>
   <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

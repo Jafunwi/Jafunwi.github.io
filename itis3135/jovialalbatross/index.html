@@ -10,29 +10,36 @@
 </head>
 <body>
   <div data-include="components/header.html"></div>
-
-  <nav aria-label="Main menu">
-    <ul>
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="hours.html">Hours</a></li>
-      <li><a href="location.html">Location</a></li>
-      <li><a href="why.html">Why</a></li>
-      <li><a href="how.html">How</a></li>
-    </ul>
-  </nav>
+  <div data-include="components/nav.html"></div>
 
   <main>
     <h2>Welcome to the Jovial Albatross Wind Tea Cart</h2>
     <img src="images/wind-tea-logo.svg" alt="A teacup with a steam curl above two ocean waves" width="240" height="200">
     <p>The Jovial Albatross Wind Tea Cart is a small seaside cart that serves four iced teas, each named after a wind that sailors have trusted for centuries: Trade Wind, Doldrums, Sea Breeze, and Gale. Every cup is brewed fresh and poured over ice with a coastal ingredient, like sea salt, citrus, or mint.</p>
     <p>An albatross can glide for thousands of miles without flapping its wings, and our teas are made in the same spirit: unhurried and easy. Walk up, pick a wind, and take a moment by the water. Use the menu above to see our teas, our hours, and where to find the cart.</p>
+
+    <h2>Pick Your Wind</h2>
+    <p>Not sure which tea to try? Tell us how you feel, and we will suggest a wind.</p>
+    <form>
+      <p>
+        <label for="mood">I am feeling</label>
+        <select id="mood" name="mood">
+          <option value="">Choose a mood</option>
+          <option value="relaxed">Relaxed</option>
+          <option value="adventurous">Adventurous</option>
+          <option value="refreshed">Hot and thirsty</option>
+          <option value="cozy">Cozy</option>
+        </select>
+      </p>
+    </form>
+    <p id="wind-suggestion" aria-live="polite"></p>
   </main>
 
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/include.min.js"></script>
+  <script src="scripts/site.js"></script>
+  <script src="scripts/wind.js"></script>
   <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>
