@@ -1,35 +1,63 @@
+/* default.css - Jovial Albatross Wind Tea Cart
+   Seaside theme: sand, teal, and coral. */
+
 :root {
   --sand: #fbf3e4;
   --sea: #0e5a6b;
   --deep: #083a46;
-  --coral: #e8604c;
+  --coral: #c9432f;
   --ink: #1f2d33;
+  --foam: #f7fcfd; /* soft off-white used for text on dark backgrounds */
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  background: var(--deep);
+}
+
+/* The body is a centered column so the site reads like one card on the deep teal page. */
 body {
-  margin: 0;
+  max-width: 60rem;
+  margin: 0 auto;
   background: var(--sand);
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.6;
 }
 
+/* Headings use a second font, a clean sans-serif, to contrast with the serif body text. */
+h1,
+h2,
+h3 {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 {
+  margin: 0;
+  color: var(--foam);
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  color: var(--sea);
+  border-bottom: 2px dotted var(--coral);
+  padding-bottom: 0.25rem;
+}
+
+h3 {
+  color: var(--deep);
+}
+
 header {
   background: var(--sea);
-  color: #fff;
+  color: var(--foam);
   padding: 2rem 1rem;
   text-align: center;
   border-bottom: 6px solid var(--coral);
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-  letter-spacing: 0.05em;
 }
 
 header p {
@@ -51,10 +79,11 @@ nav ul {
   list-style: none;
 }
 
-nav a {
+nav a,
+nav a:visited {
   display: block;
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: var(--foam);
   text-decoration: none;
   border-radius: 999px;
 }
@@ -62,22 +91,11 @@ nav a {
 nav a:hover,
 nav a[aria-current="page"] {
   background: var(--coral);
+  color: var(--foam);
 }
 
 main {
-  max-width: 48rem;
-  margin: 0 auto;
   padding: 2rem 1rem;
-}
-
-main h2 {
-  color: var(--sea);
-  border-bottom: 2px dotted var(--coral);
-  padding-bottom: 0.25rem;
-}
-
-main h3 {
-  color: var(--deep);
 }
 
 main img {
@@ -86,11 +104,15 @@ main img {
   height: auto;
   margin: 1rem auto;
   border-radius: 1rem;
-  border: 4px solid #fff;
+  border: 4px solid var(--foam);
   box-shadow: 0 4px 12px rgba(8, 58, 70, 0.25);
 }
 
 a {
+  color: var(--sea);
+}
+
+a:visited {
   color: var(--sea);
 }
 
@@ -113,37 +135,13 @@ td {
 
 th {
   background: var(--sea);
-  color: #fff;
+  color: var(--foam);
 }
 
-footer {
-  background: var(--deep);
-  color: #fff;
-  padding: 1.5rem 1rem;
-  text-align: center;
-}
-
-footer ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin: 0.75rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-footer a {
-  color: #ffd9b3;
-}
-
-footer a:hover {
-  color: #fff;
-}
 fieldset {
   border: 2px dotted var(--coral);
   border-radius: 1rem;
-  background: #fff;
+  background: var(--foam);
   padding: 1rem;
 }
 
@@ -164,16 +162,23 @@ button {
   font: inherit;
 }
 
+/* Number boxes set a width only (no padding) so the box size stays predictable. */
 input[type="number"] {
   width: 5rem;
-  padding: 0.25rem 0.5rem;
   border: 2px solid var(--sea);
   border-radius: 0.5rem;
 }
 
+select {
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--sea);
+  border-radius: 0.5rem;
+  background: var(--foam);
+}
+
 button {
   padding: 0.5rem 1.25rem;
-  color: #fff;
+  color: var(--foam);
   background: var(--sea);
   border: none;
   border-radius: 999px;
@@ -184,13 +189,50 @@ button:hover {
   background: var(--coral);
 }
 
+/* Paragraphs with an id are the live results written by the scripts. */
 main p[id] {
   font-weight: bold;
   color: var(--deep);
 }
-select {
-  padding: 0.25rem 0.5rem;
-  border: 2px solid var(--sea);
-  border-radius: 0.5rem;
-  background: #fff;
+
+footer {
+  background: var(--deep);
+  color: var(--foam);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer a,
+footer a:visited {
+  color: #ffd9b3;
+}
+
+footer a:hover {
+  color: var(--foam);
+}
+
+/* Small screens: smaller title, stacked nav, and labels above their inputs. */
+@media (max-width: 40rem) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  label {
+    display: block;
+    min-width: 0;
+  }
 }
